@@ -1,0 +1,26 @@
+@function vw($value) {
+
+	@return calc(#{ vu-raw($value) });
+}
+
+@function vh($value) {
+
+	@return calc(#{ vu-raw($value, vh) });
+}
+
+@function vw-raw($value) {
+
+	@return vu-raw($value);
+}
+
+@function vh-raw($value) {
+
+	@return vu-raw($value, vh);
+}
+
+@function vu-raw($value, $unit: vw) {
+	$value: $value / 100;
+	$full: 100#{ $unit };
+
+	@return #{ $value } * unquote("(#{ $full } - var(--scrollbar-width))");
+}
