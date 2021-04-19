@@ -1,6 +1,6 @@
 {
   "name": "@micropackage/vw",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Viewport units handling sass mixins",
   "main": "dist/vw.js",
   "repository": "https://github.com/micropackage/vw",
