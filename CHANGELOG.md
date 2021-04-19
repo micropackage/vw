@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 1.0.0 - 19.02.2020
+## 1.0.1
+
+* [Added] Dart-sass compatibility
+
+## 1.0.0
 
 Initial release
