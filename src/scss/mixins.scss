@@ -19,7 +19,7 @@
 }
 
 @function vu-raw($value, $unit: vw) {
-	$value: $value / 100;
+	$value: $value * 0.01;
 	$full: 100 + unquote($unit);
 
 	@return unquote("#{ $value } * (#{ $full } - var(--scrollbar-width))");
