@@ -50,6 +50,7 @@
     "extends": "@wordpress/stylelint-config/scss"
   },
   "jest": {
-    "collectCoverage": true
+    "collectCoverage": true,
+		"testEnvironment": "jest-environment-jsdom"
   }
 }
