@@ -9,7 +9,6 @@
 	"scripts": {
 		"test": "jest",
 		"build": "babel src/js/vw.js -o dist/vw.js",
-		"build:prod": "mp-scripts build --entry-dir=src --no-deps --mode=production",
 		"lint:scripts": "eslint src/js",
 		"lint:styles": "stylelint src/scss",
 		"lint": "run-p \"lint:*\""
