@@ -7,11 +7,12 @@
   "author": "Wojtek Szałkiewicz <wojtek@szalkiewicz.pl>",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "test": "jest",
+		"lint:scripts": "eslint src/js",
+		"lint:tests": "eslint tests",
     "build": "babel src/js/vw.js -o dist/vw.js",
-    "lint:scripts": "eslint src/js",
     "lint:styles": "stylelint src/scss",
-    "lint": "run-p \"lint:*\""
+    "lint": "run-p \"lint:*\"",
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
