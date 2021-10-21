@@ -1,48 +1,53 @@
 {
-	"name": "@micropackage/vw",
-	"version": "1.0.1",
-	"description": "Viewport units handling sass mixins",
-	"main": "dist/vw.js",
-	"repository": "https://github.com/micropackage/vw",
-	"author": "Wojtek Szałkiewicz <wojtek@szalkiewicz.pl>",
-	"license": "GPL-3.0-or-later",
-	"scripts": {
-		"test": "jest",
-		"build": "babel src/js/vw.js -o dist/vw.js",
-		"lint:scripts": "eslint src/js",
-		"lint:styles": "stylelint src/scss",
-		"lint": "run-p \"lint:*\""
-	},
-	"devDependencies": {
-		"@babel/cli": "^7.8.4",
-		"@babel/core": "^7.8.4",
-		"@babel/preset-env": "^7.8.4",
-		"@wordpress/eslint-plugin": "^4.0.0",
-		"@wordpress/stylelint-config": "^19.1.0",
-		"babel-preset-minify": "^0.5.1",
-		"eslint": "^6.8.0",
-		"jest": "^25.1.0",
-		"npm-run-all": "^4.1.5",
-		"stylelint": "^13.2.0"
-	},
-	"babel": {
-		"presets": [
-			"@babel/preset-env",
-			"minify"
-		]
-	},
-	"eslintConfig": {
-		"extends": [
-			"plugin:@wordpress/eslint-plugin/esnext"
-		],
-		"env": {
-			"browser": true
-		}
-	},
-	"stylelint": {
-		"extends": "@wordpress/stylelint-config/scss"
-	},
-	"jest": {
-		"collectCoverage": true
-	}
+  "name": "@micropackage/vw",
+  "version": "1.0.1",
+  "description": "Viewport units handling sass mixins",
+  "main": "dist/vw.js",
+  "repository": "https://github.com/micropackage/vw",
+  "author": "Wojtek Szałkiewicz <wojtek@szalkiewicz.pl>",
+  "license": "GPL-3.0-or-later",
+  "scripts": {
+    "test": "jest",
+    "build": "babel src/js/vw.js -o dist/vw.js",
+    "lint:scripts": "eslint src/js",
+    "lint:styles": "stylelint src/scss",
+    "lint": "run-p \"lint:*\""
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@wordpress/eslint-plugin": "^4.0.0",
+    "@wordpress/stylelint-config": "^19.1.0",
+    "babel-preset-minify": "^0.5.1",
+    "eslint": "^6.8.0",
+    "eslint-plugin-jest": "^25.2.2",
+    "jest": "^25.1.0",
+    "npm-run-all": "^4.1.5",
+    "stylelint": "^13.2.0"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "minify"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/esnext"
+    ],
+    "plugins": [
+      "jest"
+    ],
+    "env": {
+      "browser": true,
+      "jest/globals": true
+    }
+  },
+  "stylelint": {
+    "extends": "@wordpress/stylelint-config/scss"
+  },
+  "jest": {
+    "collectCoverage": true
+  }
 }
