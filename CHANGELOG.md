@@ -1,10 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [next]
+## 1.1.0
 
 * [Added] Eslint config for Jest
-* [Upgraded] All dependencies
+* [Changed] Upgraded all dependencies
 * [Fixed] Sass divisions
 
 ## 1.0.1
