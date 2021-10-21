@@ -34,7 +34,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "plugin:@wordpress/eslint-plugin/esnext"
+      "plugin:@wordpress/eslint-plugin/esnext",
+      "plugin:jest/recommended"
     ],
     "plugins": [
       "jest"
