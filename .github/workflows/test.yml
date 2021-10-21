@@ -1,6 +1,6 @@
 name: Test
 
-on: ['push', 'pull_request']
+on: push
 
 jobs:
   ESlint:
@@ -12,8 +12,20 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: 14
+    - name: Install dependencies
+      run: npm install
     - name: ESlint
-      run: |
-        npm install
-        npm run lint
-        npm run test
+      run: npm run lint
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: 14
+    - name: Install dependencies
+      run: npm install
+    - name: Jest
+      run: npm run test
