@@ -1,47 +1,56 @@
 {
   "name": "@micropackage/vw",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Viewport units handling sass mixins",
   "main": "dist/vw.js",
   "repository": "https://github.com/micropackage/vw",
   "author": "Wojtek Szałkiewicz <wojtek@szalkiewicz.pl>",
   "license": "GPL-3.0-or-later",
   "scripts": {
-    "test": "jest",
+		"lint:scripts": "eslint src/js",
+		"lint:tests": "eslint tests",
     "build": "babel src/js/vw.js -o dist/vw.js",
-    "build:prod": "mp-scripts build --entry-dir=src --no-deps --mode=production",
-    "lint:scripts": "eslint src/js",
     "lint:styles": "stylelint src/scss",
-    "lint": "run-p \"lint:*\""
+    "lint": "run-p \"lint:*\"",
+    "test": "jest"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
-    "@wordpress/eslint-plugin": "^4.0.0",
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@wordpress/eslint-plugin": "^9.2.0",
+    "@wordpress/stylelint-config": "^19.1.0",
     "babel-preset-minify": "^0.5.1",
-    "eslint": "^6.8.0",
-    "jest": "^25.1.0",
+    "eslint": "7",
+    "eslint-plugin-jest": "^25.2.2",
+    "jest": "^27.3.1",
     "npm-run-all": "^4.1.5",
-    "stylelint": "^13.2.0",
-    "stylelint-config-wordpress": "^16.0.0"
+    "stylelint": "^13.13.1"
   },
-	"babel": {
-		"presets": [
-			"@babel/preset-env",
-			"minify"
-		]
-	},
-	"eslintConfig": {
-	  "extends": [ "plugin:@wordpress/eslint-plugin/esnext" ],
-		"env": {
-	    "browser": true
-	  }
-	},
-	"stylelint": {
-		"extends": "stylelint-config-wordpress/scss"
-	},
-	"jest": {
-		"collectCoverage": true
-	}
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "minify"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:@wordpress/eslint-plugin/esnext",
+      "plugin:jest/recommended"
+    ],
+    "plugins": [
+      "jest"
+    ],
+    "env": {
+      "browser": true,
+      "jest/globals": true
+    }
+  },
+  "stylelint": {
+    "extends": "@wordpress/stylelint-config/scss"
+  },
+  "jest": {
+    "collectCoverage": true,
+		"testEnvironment": "jest-environment-jsdom"
+  }
 }
